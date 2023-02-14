@@ -1,10 +1,10 @@
 from bs4 import BeautifulSoup
 import requests
 
-url = 'https://www.trusselltrust.org/'
-repsoonse = requests.get(url)
+url = 'https://www.foodaidnetwork.org.uk/'
+response = requests.get(url)
 
-soup = BeautifulSoup(repsoonse.text, 'html.parser')
+soup = BeautifulSoup(response.text, 'html.parser')
 links =  soup.find_all('a')
 
 print(soup)
