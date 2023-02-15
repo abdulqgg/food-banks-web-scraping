@@ -7,7 +7,12 @@ response = requests.get(url)
 soup = BeautifulSoup(response.text, 'html.parser')
 links =  soup.find_all('a')
 
-print(soup.prettify())
+script_tag = soup.find('script', text=lambda x: x and '_pageData' in x)
+
+# Extract the variable value from the tag
+variable_value = script_tag.text.split('=')[1].strip().rstrip(';')
+
+print(variable_value.type())
 
 # example: print the text of all links on the page
 for link in links:
@@ -15,5 +20,5 @@ for link in links:
 
 # example: write links to a text file
 with open('links.txt', 'w') as f:
-    for link in links:
-        f.write(link['href'] + '\n')
+    f.write(variable_value)
+
