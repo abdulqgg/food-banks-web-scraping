@@ -23,11 +23,12 @@ ActionChains(driver).move_to_element(dropdown).click().perform()
 # Find the element 
 desired_element = driver.find_element(By.CSS_SELECTOR, csselector)
 
-# Extract text for element
+
 element_text = desired_element.text
 
-# Print the extracted text
-print(element_text)
+with open('foodbanks.txt', 'w') as f:
+    f.write(element_text + '\n')
+
 
 # Close the browser window
 driver.quit()
