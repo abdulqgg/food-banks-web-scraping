@@ -1,41 +1,36 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
-from selenium.webdriver import Chrome
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
 
-# Configure the Chrome options to run in headless mode
-chrome_options = Options()
-#chrome_options.add_argument('--headless')
+# Start a new Chrome browser window
+driver = webdriver.Chrome()
 
-# Launch a Chrome browser using the ChromeDriver executable
-driver = webdriver.Chrome(executable_path='/path/to/chromedriver', options=chrome_options)
+# Navigate to the webpage containing the element you want to extract
+driver.get("https://www.google.com/maps/d/viewer?mid=15mnlXFpd8-x0j4O6Ck6U90chPn4bkbWz&ll=51.89185325888764%2C1.659932842043248&z=8")
 
-# Navigate to the URL of the custom Google Map
-driver.get('https://www.google.com/maps/d/u/0/viewer?mid=15mnlXFpd8-x0j4O6Ck6U90chPn4bkbWz&ll=51.64010438452066%2C1.3356308175781262&z=9')
-
-# Wait for the map to load
+# Wait for the page to load and display the element you want to extract
+# (you may need to adjust the wait time depending on the page load speed)
 driver.implicitly_wait(10)
 
-# Click on each marker to load its info window
-search_box = driver.find_element_by_css_selector('#legendPanel > div > div > div.i4ewOd-PBWx0c-bN97Pc-haAclf > div > div > div.i4ewOd-pbTTYe-haAclf > div > div > div.HzV7m-pbTTYe-bN97Pc > div.HzV7m-pbTTYe-JNdkSc > div.HzV7m-pbTTYe-JNdkSc-PntVL')
+# Css selector
+csselector = "#legendPanel > div > div > div.i4ewOd-PBWx0c-bN97Pc-haAclf > div > div > div.i4ewOd-pbTTYe-haAclf > div > div > div.HzV7m-pbTTYe-bN97Pc > div.HzV7m-pbTTYe-JNdkSc > div.HzV7m-pbTTYe-JNdkSc-PntVL"
+dropdowncss = "#legendPanel > div > div > div.i4ewOd-PBWx0c-bN97Pc-haAclf > div > div > div.i4ewOd-pbTTYe-haAclf > div > div > div.HzV7m-pbTTYe-bN97Pc.HzV7m-pbTTYe-bN97Pc-qAWA2 > div.HzV7m-pbTTYe-KoToPc-ornU0b-haAclf > div > div"
 
+# Find the element using the CSS selector you provided
+#element = driver.find_element(By.CSS_SELECTOR, csselector)
 
-# for marker in markers:
-#     print(marker)
-#     marker.click()
+#dropdown element and click
+dropdown = driver.find_element(By.CSS_SELECTOR, dropdowncss)
+ActionChains(driver).move_to_element(dropdown).click().perform()
 
-# Extract the HTML of the map
-html = driver.page_source
+desired_element = driver.find_element(By.CSS_SELECTOR, csselector)
 
-# Parse the HTML with BeautifulSoup to extract the names and addresses of the markers
-soup = BeautifulSoup(html, 'html.parser')
-marker_infos = soup.find_all('div', class_='section-info-line')
+# Extract the text content of the element
+element_text = desired_element.text
 
-for info in marker_infos:
-    name = info.find('h3', class_='section-info-title').text
-    address = info.find('div', class_='section-info-address').text
-    print(name, address)
+# Print the extracted text
+print(element_text)
 
-# Close the browser
+# Close the browser window
 driver.quit()
