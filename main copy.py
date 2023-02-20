@@ -29,10 +29,14 @@ def foodbank_back(index):
     actions.move_to_element(back).click().perform()
     time.sleep(2)
 
+# Extracting foodbank data
 def get_info(index_info):
-    info = driver.find_element(By.XPATH, '//*[@id="featurecardPanel"]/div/div/div[4]/div[1]/div['+str(index_info)+']')
+    info_head = driver.find_element(By.XPATH, '//*[@id="featurecardPanel"]/div/div/div[4]/div[1]/div['+str(index_info)+']/div[1]')
+    info_data = driver.find_element(By.XPATH, '//*[@id="featurecardPanel"]/div/div/div[4]/div[1]/div['+str(index_info)+']/div[2]')
+
     with open('foodbanks_info.txt', 'a') as f:
-        f.write(info.text + '\n')
+        f.write(info_head.text + ':' + info_data.text + '\n')
+    
 
 foodbank_back(1)
 foodbank_back(6)
