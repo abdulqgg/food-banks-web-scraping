@@ -31,7 +31,8 @@ def foodbank_back(index):
 
 def get_info(index_info):
     info = driver.find_element(By.XPATH, '//*[@id="featurecardPanel"]/div/div/div[4]/div[1]/div['+str(index_info)+']')
-    print(info.text)
+    with open('foodbanks_info.txt', 'a') as f:
+        f.write(info.text + '\n')
 
 foodbank_back(1)
 foodbank_back(6)
