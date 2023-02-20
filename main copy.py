@@ -20,6 +20,10 @@ foodbank = dropdown.find_element(By.XPATH, '//*[@id="legendPanel"]/div/div/div[2
 actions.move_to_element(dropdown).click().perform()
 foodbank.click()
 time.sleep(2)
+back = driver.find_element(By.XPATH, '//*[@id="featurecardPanel"]/div/div/div[3]/div[1]/div/span/span/span')
+actions.move_to_element(back).click().perform()
+time.sleep(2)
+
 
 
 # Close the browser window
