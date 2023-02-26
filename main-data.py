@@ -24,27 +24,31 @@ def foodbank_back(index):
     foodbank = driver.find_element(By.XPATH, '//*[@id="legendPanel"]/div/div/div[2]/div/div/div[2]/div/div/div[3]/div[3]/div[2]/div['+str(index)+']')
     foodbank.click()
     time.sleep(0.3)
+    # call to extract data
     for i in range(1,6):
         get_info(i)
     back = driver.find_element(By.XPATH, '//*[@id="featurecardPanel"]/div/div/div[3]/div[1]/div/span/span/span')
     actions.move_to_element(back).click().perform()
     time.sleep(0.3)
 
-heads = ["Organisation", "Postcode", "Website", "Facebook", "Twitter"]
 # Extracting foodbank data
 def get_info(index_info):
-    #print("checking info")
+    # try to retrieve data
     try:
+        # extracting head and data
+        # e.g info_head = Organisation and info_data = Foodbank-name
         info_head = driver.find_element(By.XPATH, '//*[@id="featurecardPanel"]/div/div/div[4]/div[1]/div['+str(index_info)+']/div[1]')
         info_data = driver.find_element(By.XPATH, '//*[@id="featurecardPanel"]/div/div/div[4]/div[1]/div['+str(index_info)+']/div[2]')
     except NoSuchElementException:
+        # catch if no data
         pass
     else:
+        # if data save it to file
         with open('foodbank_data_1.txt', 'a') as f:
             f.write(info_head.text + ':' + info_data.text + '\n')
 
 
-
+# Get data for all the foodbanks
 for i in range(1,759):
      foodbank_back(i)
 
