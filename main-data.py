@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.common.exceptions import NoSuchElementException
 import time
 
 # Open chrome 
@@ -29,18 +30,25 @@ def foodbank_back(index):
     actions.move_to_element(back).click().perform()
     time.sleep(2)
 
+heads = ["Organisation", "Postcode", "Website", "Facebook", "Twitter"]
 # Extracting foodbank data
 def get_info(index_info):
-    info_head = driver.find_element(By.XPATH, '//*[@id="featurecardPanel"]/div/div/div[4]/div[1]/div['+str(index_info)+']/div[1]')
-    info_data = driver.find_element(By.XPATH, '//*[@id="featurecardPanel"]/div/div/div[4]/div[1]/div['+str(index_info)+']/div[2]')
-    with open('foodbank_data_test.txt', 'a') as f:
-        f.write(info_head.text + ':' + info_data.text + '\n')
-    
+    #print("checking info")
+    try:
+        info_head = driver.find_element(By.XPATH, '//*[@id="featurecardPanel"]/div/div/div[4]/div[1]/div['+str(index_info)+']/div[1]')
+        info_data = driver.find_element(By.XPATH, '//*[@id="featurecardPanel"]/div/div/div[4]/div[1]/div['+str(index_info)+']/div[2]')
+    except NoSuchElementException:
+        pass
+    else:
+        with open('foodbank_data_test.txt', 'a') as f:
+            f.write(info_head.text + ':' + info_data.text + '\n')
+
+
+
 # for i in range(1,759):
 #     foodbank_back(i)
 
-foodbank_back(2)
-foodbank_back(6)
+foodbank_back(184)
 
 
 # Close the browser window

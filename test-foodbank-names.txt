@@ -14,6 +14,7 @@ Adis legacy non profit community support group
 Adis legacy non profit community support group
 Adis legacy non profit community support group
 Agape Care Foodbank
+Aishah Help
 Al-Farooq Education and Community Centre
 Al-Ikhlas Centre
 Albrighton Foodbank (Tenbury)
@@ -27,7 +28,6 @@ AY Group Community Services CIC
 Aylesbury Vineyard Storehouse
 Baby Box Isle of Wight
 Bahja Initiative
-Banbury Community Project
 Banc Bwyd Aberaeron
 Banc Bwyd Bro Ddyfi Foodbank
 Banc Bwyd Llanbed-Lampeter Food Bank
@@ -130,7 +130,6 @@ CGCC Food Bank
 Chard Lord's larder
 Christ Apostle Church House of Refuge
 Christ Apostolic Church Mount of Rehoboth
-ChristChurch Hub
 CHURCHES FOODBANK - Forest Gate
 Churches Together in the Strettons
 CICC FOOD BANK
@@ -147,7 +146,6 @@ Community Essentials
 Community Food Bank Skye & Lochalsh
 Community Food Bank Skye & Lochalsh
 Community of Helping Hands
-Compassion Food Bank
 Copef Training Skills / African Emergency Food Bank
 Cornelly Development Trust
 Cornerstone Day Centre - Caritas Diocese of Salford
@@ -177,7 +175,6 @@ DN7 Community Foodbank
 Dornoch Firth Group
 Dunbar FoodShare (Formelly Dunbar Basics Bank)
 Duns Food Bank
-Aishah Help
 Earlsfield Food Bank 
 East Berwickshire FoodBank
 East Bridgwater Local Pantry
@@ -343,6 +340,7 @@ House of Bread
 House of Judah Church
 HTFoodbank [Holy Trinity Foodbank]
 Humanity First Food Bank
+Humans MCR
 Hungry Hearts for the Homeless
 Huntingdonshire Community Group
 Hurst Green Community Fridge
@@ -547,7 +545,7 @@ Sevenoaks Larder
 Share Alike 
 Share IT!
 Sharing Life Trust
-Sharlston Food Pantry
+Sharlston Foodbank
 Sherborne Food Bank
 Shipshape Health and Wellbeing
 Shiva Trust
@@ -741,7 +739,6 @@ West Hampstead Community Food Hub
 West Northumberland Food Bank
 Whaley Bridge Food Bank
 Whitefoot and Downham Community Food + Project
-Wimborne Food Bank
 Winchester Basics Bank
 Winchester Basics Bank
 Winchester Basics Bank
