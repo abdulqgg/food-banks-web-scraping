@@ -23,10 +23,9 @@ ActionChains(driver).move_to_element(dropdown).click().perform()
 # Find the element 
 desired_element = driver.find_element(By.CSS_SELECTOR, csselector)
 
-
 element_text = desired_element.text
 
-with open('foodbanks.txt', 'w') as f:
+with open('test-foodbank-names.txt', 'w') as f:
     f.write(element_text + '\n')
 
 

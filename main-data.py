@@ -22,23 +22,25 @@ actions.move_to_element(dropdown).click().perform()
 def foodbank_back(index):
     foodbank = driver.find_element(By.XPATH, '//*[@id="legendPanel"]/div/div/div[2]/div/div/div[2]/div/div/div[3]/div[3]/div[2]/div['+str(index)+']')
     foodbank.click()
-    time.sleep(0.3)
+    time.sleep(2)
     for i in range(1,6):
         get_info(i)
     back = driver.find_element(By.XPATH, '//*[@id="featurecardPanel"]/div/div/div[3]/div[1]/div/span/span/span')
     actions.move_to_element(back).click().perform()
-    time.sleep(0.3)
+    time.sleep(2)
 
 # Extracting foodbank data
 def get_info(index_info):
     info_head = driver.find_element(By.XPATH, '//*[@id="featurecardPanel"]/div/div/div[4]/div[1]/div['+str(index_info)+']/div[1]')
     info_data = driver.find_element(By.XPATH, '//*[@id="featurecardPanel"]/div/div/div[4]/div[1]/div['+str(index_info)+']/div[2]')
-    with open('foodbanks_info.txt', 'a') as f:
+    with open('foodbank_data_test.txt', 'a') as f:
         f.write(info_head.text + ':' + info_data.text + '\n')
     
-for i in range(1,759):
-    foodbank_back(i)
+# for i in range(1,759):
+#     foodbank_back(i)
 
+foodbank_back(2)
+foodbank_back(6)
 
 
 # Close the browser window
