@@ -25,7 +25,7 @@ desired_element = driver.find_element(By.CSS_SELECTOR, csselector)
 
 element_text = desired_element.text
 
-with open('test-foodbank-names.txt', 'w') as f:
+with open('foodbank-names.txt', 'w') as f:
     f.write(element_text + '\n')
 
 

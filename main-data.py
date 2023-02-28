@@ -28,7 +28,7 @@ def foodbank_back(index):
     for i in range(1,6):
         get_info(i)
     # adding ## to mark end for data retreived 
-    with open('foodbank_data_1.txt', 'a') as f:
+    with open('foodbank_data.txt', 'a') as f:
             f.write('##\n')
     back = driver.find_element(By.XPATH, '//*[@id="featurecardPanel"]/div/div/div[3]/div[1]/div/span/span/span')
     actions.move_to_element(back).click().perform()
@@ -47,7 +47,7 @@ def get_info(index_info):
         pass
     else:
         # if data save it to file
-        with open('foodbank_data_1.txt', 'a') as f:
+        with open('foodbank_data.txt', 'a') as f:
             f.write(info_head.text + '§' + info_data.text + '\n')
 
 
