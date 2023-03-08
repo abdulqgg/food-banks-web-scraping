@@ -2,7 +2,7 @@
 
 This project involved web scraping data on all independent foodbanks in the UK from the Independent Food Aid Network. To get a comprehensive view of the network, I also used data from the [Google Maps website](https://www.google.com/maps/d/viewer?mid=15mnlXFpd8-x0j4O6Ck6U90chPn4bkbWz&ll=51.64010438452066%2C1.3356308175781262&z=9) to supplement the Independent Food Aid Network data.
 
-I used Python and Selenium to extract the foodbank names, addresses, contact numbers, and social media handles. The collected data was saved in a CSV file named foodbanks.csv.
+I used Python and Selenium to extract the foodbank names, addresses, contact numbers, and social media handles. The collected data was saved in a CSV file named data.csv.
 
 The goal of this project was to obtain a detailed overview of the UK foodbank network, which can be used to understand the scale and distribution of foodbanks across the country. This data can also be used by policymakers to identify areas of need and to develop strategies to combat food poverty.
 
