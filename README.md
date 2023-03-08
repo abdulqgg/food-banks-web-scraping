@@ -11,6 +11,10 @@ The goal of this project was to obtain a detailed overview of the UK foodbank ne
 - Clone the repository
 - Run the scripts in the following order: `main.py` or `main-data.py`, and then `txt-to-csv.py`.
 
+## Demo
+![demo video](https://user-images.githubusercontent.com/43912641/223794580-cc10d75d-6f6d-444b-a3f7-f1ca4df08b3f.gif)
+
+
 ## Usage
 
 - Run `main.py` to extract the foodbank names to `foodbank_names.txt`
